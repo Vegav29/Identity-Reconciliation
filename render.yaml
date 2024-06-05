@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: my-express-app
+    env: node
+    plan: free
+    buildCommand: 'npm install'
+    startCommand: 'node server.js'
+    envVars:
+      - key: MONGO_URL
+        value: 'mongodb+srv://vega:vega2003@cluster0.dpfy1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+      - key: DB_NAME
+        value: 'contacts'
+      - key: COLLECTION_NAME
+        value: 'contacts'
