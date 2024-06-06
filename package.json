@@ -11,6 +11,6 @@
     "body-parser": "^1.19.0",
     "mongodb": "^4.1.0",
     "uuid": "^8.3.2",
-    "@fingerprintjs/fingerprintjs-pro": "^3.3.0"  // Add this line
+    "@fingerprintjs/fingerprintjs-pro": "^3.3.0"  
   }
 }
