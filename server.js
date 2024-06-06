@@ -10,11 +10,8 @@ const port = process.env.PORT || 4000;
 const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/contacts';
 const dbName = process.env.DB_NAME || 'contacts';
 const collectionName = process.env.COLLECTION_NAME || 'contacts';
-const fingerprintClient = new FingerprintJsServerApiClient({
-  apiKey: fingerprintApiKey,
-  region: fingerprintRegion ? Region[fingerprintRegion.toUpperCase()] || Region.AP : Region.AP,
-});
-
+const fingerprintApiKey = process.env.FINGERPRINTJS_API_KEY || 'your-secret-api-key';
+const fingerprintRegion = process.env.FINGERPRINTJS_REGION || 'ap'; // Default to 'ap' if not provided
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '')));
@@ -54,7 +51,7 @@ connectToMongo()
 // Initialize FingerprintJsServerApiClient with your secret API key
 const fingerprintClient = new FingerprintJsServerApiClient({
   apiKey: fingerprintApiKey,
-  region: Region[fingerprintRegion.toUpperCase()] || Region.AP, // Default to Region.AP if region is not defined
+  region: fingerprintRegion ? Region[fingerprintRegion.toUpperCase()] || Region.AP : Region.AP,
 });
 
 async function findContactByFingerprint(fingerprint) {
