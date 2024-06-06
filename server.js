@@ -49,9 +49,15 @@ connectToMongo()
   });
 
 // Initialize FingerprintJsServerApiClient with your secret API key
+if (!Region) {
+  console.error('Region is undefined');
+  process.exit(1);
+}
+
+// Initialize FingerprintJsServerApiClient with your secret API key
 const fingerprintClient = new FingerprintJsServerApiClient({
   apiKey: fingerprintApiKey,
-   region: Region.AP,
+  region: Region[fingerprintRegion.toUpperCase()] || Region.AP,
 });
 
 async function findContactByFingerprint(fingerprint) {
