@@ -3,7 +3,7 @@ services:
     name: my-express-app
     env: node
     plan: free
-    buildCommand: 'npm install @fingerprintjs/fingerprintjs-pro && npm install'
+    buildCommand: 'npm install cors && npm install'
     startCommand: 'node server.js'
     envVars:
       - key: MONGO_URL
