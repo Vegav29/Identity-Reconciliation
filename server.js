@@ -51,7 +51,7 @@ connectToMongo()
 // Initialize FingerprintJsServerApiClient with your secret API key
 const fingerprintClient = new FingerprintJsServerApiClient({
   apiKey: fingerprintApiKey,
-   region: Region[fingerprintRegion.toUpperCase()] || Region.AP,
+   region: Region.AP,
 });
 
 async function findContactByFingerprint(fingerprint) {
