@@ -13,7 +13,7 @@ const dbName = process.env.DB_NAME || 'contacts';
 const collectionName = process.env.COLLECTION_NAME || 'contacts';
 const cors=require("cors");
 const corsOptions ={
-   origin:'https://frontend-1-hfaz.onrender.com/', 
+   origin:'*', 
    credentials:true,            //access-control-allow-credentials:true
    optionSuccessStatus:200,
   allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization']
