@@ -8,9 +8,9 @@ const FingerprintJS = require('@fingerprintjs/fingerprintjs-pro');
 const app = express();
 const port = process.env.PORT || 4000; // Use environment variable for port
 
-const mongoUrl = process.env.MONGO_URL || 'your-default-mongo-url'; // Use environment variable for MongoDB URL
-const dbName = process.env.DB_NAME || 'contacts';
-const collectionName = process.env.COLLECTION_NAME || 'contacts';
+const mongoUrl = process.env.MONGO_URL;
+const dbName = process.env.DB_NAME;
+const collectionName = process.env.COLLECTION_NAME;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '')));
@@ -93,8 +93,8 @@ app.post('/identify', async (req, res) => {
 
   // Initialize the FingerprintJS agent
   const fpPromise = FingerprintJS.load({
-    apiKey: '3oJO97sNMUWYUKNDNqSs',
-    region: 'ap',
+    apiKey: process.env.FINGERPRINTJS_API_KEY,
+    region: process.env.FINGERPRINTJS_REGION,
   });
 
   try {
