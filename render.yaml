@@ -3,7 +3,7 @@ services:
     name: my-express-app
     env: node
     plan: free
-    buildCommand: 'npm install cors && npm install'
+    buildCommand: 'npm install cors --save && npm install'
     startCommand: 'node server.js'
     envVars:
       - key: MONGO_URL
