@@ -11,7 +11,15 @@ const port = process.env.PORT || 4000; // Use environment variable for port
 const mongoUrl = process.env.MONGO_URL || 'your-default-mongo-url'; // Use environment variable for MongoDB URL
 const dbName = process.env.DB_NAME || 'contacts';
 const collectionName = process.env.COLLECTION_NAME || 'contacts';
+const cors=require("cors");
+const corsOptions ={
+   origin:'https://frontend-1-hfaz.onrender.com/', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+  allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization']
+}
 
+app.use(cors(corsOptions))
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '')));
