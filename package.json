@@ -1,16 +1,18 @@
-{
-  "name": "my-express-app",
-  "version": "1.0.0",
-  "description": "An Express application",
-  "main": "index.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongodb": "^4.1.4",
-    "uuid": "^8.3.2"
-  }
-}
+services:
+  - type: web
+    name: my-express-app
+    env: node
+    plan: free
+    buildCommand: 'npm install'
+    startCommand: 'node server.js'
+    envVars:
+      - key: MONGO_URL
+        value: 'mongodb+srv://vega:vega2003@cluster0.dpfy1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+      - key: DB_NAME
+        value: 'contacts'
+      - key: COLLECTION_NAME
+        value: 'contacts'
+      - key: FINGERPRINTJS_API_KEY
+        value: '3oJO97sNMUWYUKNDNqSs'
+      - key: FINGERPRINTJS_REGION
+        value: 'ap'
