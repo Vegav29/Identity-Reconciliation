@@ -15,4 +15,4 @@ services:
       - key: FINGERPRINTJS_API_KEY
         value: '3oJO97sNMUWYUKNDNqSs'
       - key: FINGERPRINTJS_REGION
-        value: 'ap'
+        value: 'AP'
