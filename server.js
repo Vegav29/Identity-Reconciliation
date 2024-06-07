@@ -6,15 +6,15 @@ const { v4: uuidv4 } = require('uuid');
 
 
 const app = express();
-const port = process.env.PORT || 4000; // Use environment variable for port
+const port = process.env.PORT || 4000; 
 
-const mongoUrl = process.env.MONGO_URL || 'your-default-mongo-url'; // Use environment variable for MongoDB URL
+const mongoUrl = process.env.MONGO_URL || 'your-default-mongo-url'; 
 const dbName = process.env.DB_NAME || 'contacts';
 const collectionName = process.env.COLLECTION_NAME || 'contacts';
 const cors=require("cors");
 const corsOptions ={
    origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
+   credentials:true,           
    optionSuccessStatus:200,
   allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization']
 }
